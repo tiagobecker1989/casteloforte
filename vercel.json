@@ -1,0 +1,21 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": "dist",
+  "regions": ["gru1"],
+  "functions": { "api/index.js": { "maxDuration": 60 } },
+  "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }],
+  "crons": [{ "path": "/api/cron/cobranca", "schedule": "0 9 * * *" }],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "same-origin" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains" }
+      ]
+    }
+  ]
+}
