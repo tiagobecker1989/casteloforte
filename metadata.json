@@ -1,0 +1,10 @@
+{
+  "name": "IELB ERP - Sistema de Gestão Eclesiástica",
+  "description": "Sistema modular de gestão para a Igreja Evangélica Luterana do Brasil, focado em cuidado pastoral, redução de evasão e automação financeira.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

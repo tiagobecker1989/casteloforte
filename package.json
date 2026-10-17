@@ -1,0 +1,53 @@
+{
+  "name": "ielb-erp---sistema-de-gestão-eclesiástica",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx --env-file-if-exists=.env.local local-server.ts",
+    "build": "vite build",
+    "start": "cross-env NODE_ENV=production tsx --env-file-if-exists=.env.local local-server.ts",
+    "lint": "tsc --noEmit",
+    "preview": "vite preview",
+    "build:api": "node scripts/build-api.mjs",
+    "db:migrate": "tsx --env-file-if-exists=.env.local scripts/migrate.ts",
+    "vercel-build": "npm run build:api && npm run build && npm run db:migrate",
+    "test:e2e": "node scripts/e2e.mjs"
+  },
+  "dependencies": {
+    "@e965/xlsx": "^0.20.3",
+    "@google/genai": "^1.34.0",
+    "express": "^5.3.0",
+    "html2pdf.js": "0.10.1",
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.8",
+    "lucide-react": "^0.562.0",
+    "mammoth": "^1.13.0",
+    "nodemailer": "^10.1.0",
+    "papaparse": "^5.7.0",
+    "pdfjs-dist": "^6.4.299",
+    "pg": "^8.23.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-router-dom": "^7.11.0",
+    "recharts": "^3.6.0",
+    "word-extractor": "^1.0.4"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.14.0",
+    "@types/nodemailer": "^8.0.2",
+    "@types/papaparse": "^5.5.2",
+    "@types/pg": "^8.23.1",
+    "@vitejs/plugin-react": "^5.0.0",
+    "cross-env": "^10.1.0",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.23.15",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}
